@@ -1,21 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Introduction here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Introduction extends World
 {
 
-    /**
-     * Constructor for objects of class Introduction.
-     * 
-     */
+    Label titleLabel = new Label("Hungry Elephant", 50); 
+    
     public Introduction()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        setBackground("images/background.jpg");
+        addObject(titleLabel, getWidth()/2, getHeight()/2);
+    }
+    
+    public void act()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            
+        }
     }
 }
