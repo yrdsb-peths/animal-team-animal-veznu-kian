@@ -19,6 +19,7 @@ public class Elephant extends Actor
 public class Elephant extends Actor
 {
 
+    String facing = "right";
     public void act()
     {
        if(Greenfoot.isKeyDown("left"))
@@ -32,3 +33,4 @@ public class Elephant extends Actor
        }
     }
 }
+
