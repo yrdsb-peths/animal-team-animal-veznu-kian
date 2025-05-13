@@ -29,6 +29,15 @@ public class MyWorld extends World {
         addObject(gameOverLabel,300,200); 
     }
     
+    public void increaseScore(){
+        score ++;
+        scoreLabel.setValue(score);
+        
+        if(score % 5 == 0)
+        {
+            level+=1;
+        }
+    }
     public void createApple(){
         Apple apple = new Apple();
         apple.setSpeed(level);
