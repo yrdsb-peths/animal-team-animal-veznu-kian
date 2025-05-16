@@ -4,6 +4,7 @@ public class Elephant extends Actor
 {
     GreenfootSound elephantSound = new GreenfootSound("sounds/elephantcub.mp3");
     String facing = "right";
+
     
     /**
      * Based on the user's input the Elephant will move accordingly.
@@ -11,6 +12,48 @@ public class Elephant extends Actor
      * left. On the other hand if the user presses "right key" elephant 
      * will move 3 units right.
      */
+
+    GreenfootImage[] idleRight = new GreenfootImage[8];
+    GreenfootImage[] idleLeft = new GreenfootImage[8];
+    SimpleTimer animationTimer = new SimpleTimer();
+    public Elephant()
+    {
+        for (int i = 0; i < idleRight.length; i++)
+        {
+            idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idleRight[i].scale(50,50);
+        }
+        
+        for (int i = 0; i < idleLeft.length; i++)
+        {
+            idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idleLeft[i].mirrorHorizontally();
+            idleLeft[i].scale(50,50);
+        }
+        
+        animationTimer.mark();
+        
+        setImage(idleRight[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+       if(animationTimer.millisElapsed() < 200)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if (facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        } else {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        } 
+    }
     public void act()
     {
         
