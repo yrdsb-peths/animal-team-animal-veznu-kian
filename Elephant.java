@@ -77,6 +77,7 @@ public class Elephant extends Actor
        }
        
        eat();
+       animateElephant();
     }
     
     /**
