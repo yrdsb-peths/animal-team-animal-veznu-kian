@@ -4,15 +4,23 @@ public class Elephant extends Actor
 {
     GreenfootSound elephantSound = new GreenfootSound("sounds/elephantcub.mp3");
     String facing = "right";
+    
+    /**
+     * Based on the user's input the Elephant will move accordingly.
+     * If the user presses "left key" elephant will move 3 units to the
+     * left. On the other hand if the user presses "right key" elephant 
+     * will move 3 units right.
+     */
     public void act()
     {
+        
        if(Greenfoot.isKeyDown("left"))
        {
-           move(-3);
+           move(-5);
            facing = "left";
        } else if (Greenfoot.isKeyDown("right"))
        {
-           move(3);
+           move(5);
            facing = "right";
        }
        
