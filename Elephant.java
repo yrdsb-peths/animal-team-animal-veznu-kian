@@ -6,16 +6,14 @@ public class Elephant extends Actor
     String facing = "right";
 
     
-    /**
-     * Based on the user's input the Elephant will move accordingly.
-     * If the user presses "left key" elephant will move 3 units to the
-     * left. On the other hand if the user presses "right key" elephant 
-     * will move 3 units right.
-     */
 
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     SimpleTimer animationTimer = new SimpleTimer();
+    
+    /**
+     * Constructor for the Elephant class. 
+     */
     public Elephant()
     {
         for (int i = 0; i < idleRight.length; i++)
@@ -37,6 +35,10 @@ public class Elephant extends Actor
     }
     
     int imageIndex = 0;
+    /**
+     * This method animates the elephant across the screen every 2s.
+     * After that period of time it will change the image accordingly.
+     */
     public void animateElephant()
     {
        if(animationTimer.millisElapsed() < 200)
@@ -54,6 +56,13 @@ public class Elephant extends Actor
             imageIndex = (imageIndex + 1) % idleLeft.length;
         } 
     }
+    
+    /**
+     * Based on the user's input the Elephant will move accordingly.
+     * If the user presses "left key" elephant will move 3 units to the
+     * left. On the other hand if the user presses "right key" elephant 
+     * will move 3 units right.
+     */
     public void act()
     {
         
@@ -70,7 +79,11 @@ public class Elephant extends Actor
        eat();
     }
     
-    
+    /**
+     * This method is called when the elephant collects the apple. 
+     * It removes the apple from the world, creates a new apple, increases 
+     * the score, and plays the sound accordingly.
+     */
     public void eat()
     {
         if(isTouching(Apple.class))
