@@ -1,20 +1,13 @@
-# Set up Greenfoot for VSCode
+# Setup Animal game for you!
 
-[Mac]
-1. Open `Finder` and navigate to the Applications folder.
-2. Right-click on the Greenfoot app and select `Show Package Contents`.
-3. In the opened folder, go to `Contents -> Resources -> Java` and find the `greenfoot.jar` file.
-4. Copy this `greenfoot.jar` to the `/lib` Folder in this project.
+1. Open your notepad 
+2. save an empty notepad as project.greenfoot
+3. Save to the game files
+4. open the game
 
-[Windows]
-1. Open `File Explorer` and navigate to `C:\Program Files\Greenfoot` and locate the `greenfoot.jar` file.
-2. Copy this `greenfoot.jar` to the `\lib` Folder in this project.
 
-<br>
-<br>
+# Once game is Open:
+1. instantiate "introduction" and "myWorld"
+2. follow the instructions on screen
+3. Last but not least, have fun!
 
-# project.greenfoot
-Copy the `project.greenfoot.md` file and rename it to `project.greenfoot`
-
-# Learn Markdown Basics
-[Markdown basics](https://www.markdownguide.org/getting-started/)
